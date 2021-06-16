@@ -3,7 +3,7 @@ Import GBIF Backbone Taxonomy from intermediate MySQL Database into an Diversity
 
 ## Prerequisites
 
-1. The gbif2tnt script requires that a MySQL database exists that have been created with the [gbif2mysql](#gbif2mysql) script
+1. The gbif2tnt script requires that a MySQL database exists that have been created with the [gbif2mysql](https://github.com/ZFMK/gbif2mysql) script
 2. A running instance of [DiversityTaxonNames](https://diversityworkbench.net/Portal/DiversityTaxonNames) as well as access to its database on a MS SQL Server is required
 3. An installation of FreeTDS for connecting to the TaxonNames database (see [FreeTDS](https://github.com/ZFMK/gbif2tnt/tree/main#freetds) below)
 
