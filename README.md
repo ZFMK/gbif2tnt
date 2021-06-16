@@ -44,26 +44,43 @@ Create and edit the config file
 Insert the needed database connection values:
 
     [gbifdb_con]
+    # this is the MySQL database containing the imported GBIF Backbone data as flat tables `Taxon` and `VernacularName`
     host = 
     user = 
-    passwd =  
+    passwd = 
     db = 
     charset = utf8
     taxontable = Taxon
     vernaculartable = VernacularName
-
-### Running gbif2mysql
-
-    python import_gbif.py <directory containing tsv files from GBIF backbone taxonomy>
-
-
-This script takes about 3 hours on a machine with MySQL database on SSD but old AMD FX 6300 CPU. Might be a lot faster with a more recent machine. Progress is printed to terminal.
-
-
-
+    
+    [tnt_con]
+    # This is the DiversityTaxonNames database where the GBIF Backbone data should be imported
+    DSN = 
+    user = 
+    passwd = 
+    port = 
+    db = 
 
 
+Adapt the information on the download of the GBIF Backbone Taxonomy
 
+    [gbif_source_details]
+    # Information on the downloaded GBIF Backbone data
+    uri = https://doi.org/10.15468/39omei
+    name = GBIF Backbone Taxonomy
+    accessiondate = 
+    version = 
+    license = CC BY 4.0
+
+
+### Running gbif2tnt
+
+    python Transfer.py
+
+This script takes about 3.5 hours when existing datasets from a former GBIF Taxonomy import must be deleted first. Otherwise it takes about 1.5 hours. Progress is printed to terminal.
+
+
+----
 
 ## FreeTDS
 
