@@ -1,0 +1,8 @@
+config.ini
+**/__pycache__/**
+*.log
+gbif2tnt.egg-info
+
+
+
+
