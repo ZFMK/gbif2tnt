@@ -5,7 +5,60 @@ Import GBIF Backbone Taxonomy from intermediate MySQL Database into an Diversity
 
 1. The gbif2tnt script requires that a MySQL database exists that have been created with the [gbif2mysql](#gbif2mysql) script
 2. A running instance of [DiversityTaxonNames](https://diversityworkbench.net/Portal/DiversityTaxonNames) as well as access to its database on a MS SQL Server is required
-3. An installation of FreeTDS for connecting to the TaxonNames database (see [FreeTDS]() below)
+3. An installation of FreeTDS for connecting to the TaxonNames database (see [FreeTDS](https://github.com/ZFMK/gbif2tnt/tree/main#freetds) below)
+
+
+
+### gbif2tnt installation
+
+#### Create Python Virtual Environment:
+
+
+    python3 -m venv gbif2tnt_venv
+    cd gbif2tnt_venv
+
+
+Activate virtual environment:
+
+    source bin/activate
+
+Upgrade pip and setuptools
+
+    python -m pip install -U pip
+    pip install --upgrade pip setuptools
+
+Clone gbif2mysql from github: 
+
+    git clone https://github.com/ZFMK/gbif2tnt.git
+
+
+Install the gbif2tnt script:
+
+    cd gbif2tnt
+    python setup.py develop
+
+Create and edit the config file
+
+    cp config.template.ini config.ini
+
+Insert the needed database connection values:
+
+    [gbifdb_con]
+    host = 
+    user = 
+    passwd =  
+    db = 
+    charset = utf8
+    taxontable = Taxon
+    vernaculartable = VernacularName
+
+### Running gbif2mysql
+
+    python import_gbif.py <directory containing tsv files from GBIF backbone taxonomy>
+
+
+This script takes about 3 hours on a machine with MySQL database on SSD but old AMD FX 6300 CPU. Might be a lot faster with a more recent machine. Progress is printed to terminal.
+
 
 
 
