@@ -9,9 +9,9 @@ Import GBIF Backbone Taxonomy from intermediate MySQL Database into an Diversity
 
 
 
-### gbif2tnt installation
+## gbif2tnt installation
 
-#### Create Python Virtual Environment:
+### Create Python Virtual Environment:
 
 
     python3 -m venv gbif2tnt_venv
@@ -73,7 +73,7 @@ Adapt the information on the download of the GBIF Backbone Taxonomy
     license = CC BY 4.0
 
 
-### Running gbif2tnt
+## Running gbif2tnt
 
     python Transfer.py
 
